@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		088CF6682114467500069519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088CF6672114467500069519 /* AppDelegate.swift */; };
-		088CF66A2114467500069519 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088CF6692114467500069519 /* ViewController.swift */; };
+		088CF66A2114467500069519 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088CF6692114467500069519 /* CameraController.swift */; };
 		088CF66D2114467500069519 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 088CF66B2114467500069519 /* Main.storyboard */; };
 		088CF66F2114467700069519 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 088CF66E2114467700069519 /* Assets.xcassets */; };
 		088CF6722114467700069519 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 088CF6702114467700069519 /* LaunchScreen.storyboard */; };
+		088CF67B211446C300069519 /* Sweet Hipster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 088CF67A211446C300069519 /* Sweet Hipster.ttf */; };
+		088CF68221144A1500069519 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088CF68121144A1500069519 /* AlertHelper.swift */; };
+		088CF68421144F9600069519 /* CoreMLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088CF68321144F9600069519 /* CoreMLHelper.swift */; };
+		A2C1E8FF25305E4100C27060 /* MyImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A2C1E8FE25305E4100C27060 /* MyImageClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		088CF6642114467500069519 /* FestFoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FestFoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		088CF6672114467500069519 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		088CF6692114467500069519 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		088CF6692114467500069519 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		088CF66C2114467500069519 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		088CF66E2114467700069519 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		088CF6712114467700069519 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		088CF6732114467700069519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		088CF67A211446C300069519 /* Sweet Hipster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sweet Hipster.ttf"; sourceTree = "<group>"; };
+		088CF68121144A1500069519 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		088CF68321144F9600069519 /* CoreMLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLHelper.swift; sourceTree = "<group>"; };
+		A2C1E8FE25305E4100C27060 /* MyImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = MyImageClassifier.mlmodel; path = "assets CreateML/Core/MyImageClassifier.mlmodel"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,50 @@
 		088CF6662114467500069519 /* FestFoodApp */ = {
 			isa = PBXGroup;
 			children = (
+				088CF680211449E500069519 /* Model */,
+				088CF67F211449DB00069519 /* View */,
+				088CF67E211449D400069519 /* Controller */,
+				088CF679211446A900069519 /* Resources */,
 				088CF6672114467500069519 /* AppDelegate.swift */,
-				088CF6692114467500069519 /* ViewController.swift */,
 				088CF66B2114467500069519 /* Main.storyboard */,
 				088CF66E2114467700069519 /* Assets.xcassets */,
 				088CF6702114467700069519 /* LaunchScreen.storyboard */,
 				088CF6732114467700069519 /* Info.plist */,
 			);
 			path = FestFoodApp;
+			sourceTree = "<group>";
+		};
+		088CF679211446A900069519 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A2C1E8FE25305E4100C27060 /* MyImageClassifier.mlmodel */,
+				088CF67A211446C300069519 /* Sweet Hipster.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		088CF67E211449D400069519 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				088CF6692114467500069519 /* CameraController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		088CF67F211449DB00069519 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		088CF680211449E500069519 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				088CF68121144A1500069519 /* AlertHelper.swift */,
+				088CF68321144F9600069519 /* CoreMLHelper.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,11 +135,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Matthieu PASSEREL";
 				TargetAttributes = {
 					088CF6632114467500069519 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -122,6 +167,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				088CF67B211446C300069519 /* Sweet Hipster.ttf in Resources */,
 				088CF6722114467700069519 /* LaunchScreen.storyboard in Resources */,
 				088CF66F2114467700069519 /* Assets.xcassets in Resources */,
 				088CF66D2114467500069519 /* Main.storyboard in Resources */,
@@ -135,7 +181,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				088CF66A2114467500069519 /* ViewController.swift in Sources */,
+				088CF68221144A1500069519 /* AlertHelper.swift in Sources */,
+				A2C1E8FF25305E4100C27060 /* MyImageClassifier.mlmodel in Sources */,
+				088CF66A2114467500069519 /* CameraController.swift in Sources */,
+				088CF68421144F9600069519 /* CoreMLHelper.swift in Sources */,
 				088CF6682114467500069519 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +237,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -249,6 +299,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -283,15 +334,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q3T485N255;
+				DEVELOPMENT_TEAM = 3DZAHM87N2;
 				INFOPLIST_FILE = FestFoodApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.codabee.FestFoodApp;
+				PRODUCT_BUNDLE_IDENTIFIER = net.roddata.FestFoodApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -301,15 +352,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q3T485N255;
+				DEVELOPMENT_TEAM = 3DZAHM87N2;
 				INFOPLIST_FILE = FestFoodApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.codabee.FestFoodApp;
+				PRODUCT_BUNDLE_IDENTIFIER = net.roddata.FestFoodApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

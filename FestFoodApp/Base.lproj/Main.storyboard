@@ -1,24 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Sweet Hipster.ttf">
+            <string>Sweet-Hipster</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Camera Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CameraController" customModule="FestFoodApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="GKp-IB-PAM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Fast app Food)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="klz-n9-Yhn">
+                                <rect key="frame" x="20" y="20" width="335" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="PKg-we-X9G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Sweet-Hipster" family="Sweet Hipster" pointSize="56"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appuyez sur le burger pour choisir une image" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="QCv-6b-2V2">
+                                <rect key="frame" x="20" y="587" width="270" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="IaV-YJ-Tw0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="21"/>
+                                <color key="textColor" red="0.91423815488815308" green="0.33087795972824097" blue="0.30712306499481201" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKg-5E-psJ">
+                                <rect key="frame" x="310" y="602" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="fdB-3w-3Zd"/>
+                                    <constraint firstAttribute="width" constant="45" id="nFs-xj-NPy"/>
+                                </constraints>
+                                <state key="normal" image="burger_icon"/>
+                                <connections>
+                                    <action selector="takePicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bEB-KE-5Op"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gSc-Qk-aDe">
+                                <rect key="frame" x="16" y="88" width="343" height="491"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="klz-n9-Yhn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TgM-gg-0cs"/>
+                            <constraint firstItem="klz-n9-Yhn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Xc9-hy-Ccl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gSc-Qk-aDe" secondAttribute="trailing" constant="16" id="XcE-7J-Ny6"/>
+                            <constraint firstItem="GKp-IB-PAM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cqV-QW-uSU"/>
+                            <constraint firstItem="GKp-IB-PAM" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="dyz-41-5Sd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WKg-5E-psJ" secondAttribute="bottom" constant="20" id="gAQ-rd-eUj"/>
+                            <constraint firstItem="GKp-IB-PAM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gxm-MA-gjZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QCv-6b-2V2" secondAttribute="bottom" constant="20" id="hmG-hZ-wZI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="klz-n9-Yhn" secondAttribute="trailing" constant="20" id="k6Z-M3-g3i"/>
+                            <constraint firstItem="QCv-6b-2V2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="k86-Un-yMR"/>
+                            <constraint firstItem="gSc-Qk-aDe" firstAttribute="top" secondItem="klz-n9-Yhn" secondAttribute="bottom" constant="8" id="qeX-Ia-79o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WKg-5E-psJ" secondAttribute="trailing" constant="20" id="qhr-HN-NXU"/>
+                            <constraint firstItem="WKg-5E-psJ" firstAttribute="leading" secondItem="QCv-6b-2V2" secondAttribute="trailing" constant="20" id="rmq-R0-3GV"/>
+                            <constraint firstItem="gSc-Qk-aDe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="sYX-eT-pDf"/>
+                            <constraint firstItem="GKp-IB-PAM" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="tvI-ZL-9Ov"/>
+                            <constraint firstItem="QCv-6b-2V2" firstAttribute="top" secondItem="gSc-Qk-aDe" secondAttribute="bottom" constant="8" id="zIW-tG-EdQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="gSc-Qk-aDe" id="v1N-MQ-Tny"/>
+                        <outlet property="predictionLabel" destination="QCv-6b-2V2" id="dXg-uA-Mx2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="1920" height="1280"/>
+        <image name="burger_icon" width="64" height="64"/>
+    </resources>
 </document>
